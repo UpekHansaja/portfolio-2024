@@ -1,7 +1,21 @@
 :root {
   --background-color: #1d1d1d;
-  --thin-border: solid 1px #ffffff17;
   --darkBg-font-color: #f8f9fa;
+  --selection-text-color: #ff6b6b;
+  --special-text-color: #ffc107;
+
+  --thin-border: solid 1px #ffffff17;
+  --medium-border: solid 2px #ffffff17;
+  --thin-border-color: #ffffff20;
+}
+
+::selection {
+  background: transparent;
+  color: var(--selection-text-color);
+}
+::-moz-selection {
+  background: transparent;
+  color: var(--selection-text-color);
 }
 
 @font-face {
@@ -20,13 +34,16 @@ body {
 }
 
 .bg-blur {
-  position: sticky !important;
+  height: 70px;
+  /* position: sticky !important; */
+  position: fixed !important;
   top: 0 !important;
   background-size: cover;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   z-index: 100;
   border-bottom: var(--thin-border);
+  width: 100%;
 }
 
 .form-label img {
@@ -79,7 +96,8 @@ body {
   background-color: transparent !important;
   position: relative;
   width: 100%;
-  height: 60vh;
+  height: 650px;
+  height: 570px;
   object-fit: cover;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -87,6 +105,7 @@ body {
   object-position: bottom;
   transform: scalex(-1);
   mix-blend-mode: lighten;
+  z-index: -1;
 }
 
 a {
@@ -110,6 +129,144 @@ a i {
   object-fit: cover;
   border-radius: 50%;
   border: solid 7px var(--darkBg-font-color);
+}
+
+.img-wrapper {
+  display: inline-block; /* Change the default display type to inline-block */
+  overflow: hidden; /* Hide the overflow */
+  width: 150px; /* Set the desired width */
+  height: 150px; /* Set the desired height */
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.img-wrapper img {
+  transition: transform 0.3s ease; /* Add a smooth transition effect */
+}
+
+.img-wrapper:hover img {
+  transform: scale(1.3) !important; /* Zoom out the image by 20% on hover */
+}
+
+.spinball-video {
+  width: 100%;
+  height: 570px;
+  object-fit: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  object-position: center;
+  transform: scalex(-1);
+  mix-blend-mode: lighten;
+  z-index: -1;
+}
+
+.tech-stack-code code {
+  /* color: var(--darkBg-font-color) !important; */
+  color: var(--special-text-color);
+}
+
+.tech-stack {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px;
+}
+
+.tech-stack .tech-circle img {
+  opacity: 1 !important;
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.adjustment-logo {
+  width: 60px !important;
+  height: 60px !important;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.adjustment-tools {
+  width: 60px !important;
+  height: 60px !important;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.invert-color {
+  filter: invert(1);
+}
+
+.tech-circle {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border-radius: 50%;
+  border: var(--medium-border);
+  transition: 0.3s ease-in-out;
+}
+
+.tech-circle:hover {
+  background-color: var(--darkBg-font-color) !important;
+  transition: 0.3s ease-in-out;
+}
+
+.tech-circle:hover .invert-color {
+  filter: invert(0);
+  transition: 0.3s ease-in-out;
+}
+
+.ligth-radien-bg {
+  background: radial-gradient(#ffffff 68%, #ffffff00 80%);
+  border-radius: 50%;
+  padding: 0;
+}
+
+.yellow-font {
+  color: var(--special-text-color) !important;
+}
+
+.animate-icon-d4 {
+  animation: animateIconD4 3s infinite;
+  position: absolute;
+}
+
+@keyframes animateIconD4 {
+  0% {
+    transform: translateY(0);
+    rotate: -5deg;
+  }
+  50% {
+    transform: translateY(10px);
+    rotate: 5deg;
+  }
+  100% {
+    transform: translateY(0);
+    rotate: -5deg;
+  }
+}
+
+.light-border-bottom {
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  border-color: var(--thin-border-color);
+}
+
+.light-border-right {
+  border-style: solid;
+  border-width: 0 1px 0 0;
+  border-color: var(--thin-border-color);
+}
+
+@media screen and (max-width: 1466px) {
+  .hero-pointing-video {
+    height: 400px !important;
+  }
 }
 
 @media screen and (max-width: 768px) {
