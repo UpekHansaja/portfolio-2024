@@ -3,6 +3,7 @@
   --darkBg-font-color: #f8f9fa;
   --selection-text-color: #ff6b6b;
   --special-text-color: #ffc107;
+  --light-font-transparent-text-color: #ffffffbc;
 
   --thin-border: solid 1px #ffffff17;
   --medium-border: solid 2px #ffffff17;
@@ -261,6 +262,26 @@ a i {
   border-style: solid;
   border-width: 0 1px 0 0;
   border-color: var(--thin-border-color);
+}
+
+.roadmap-img{
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  transition: .2s ease-in-out;
+}
+
+.roadmap-img:hover{
+  transform: scale(1.1);
+  transition: .2s ease-in-out;
+}
+
+.selected-text-color {
+  color: var(--selection-text-color) !important;
+}
+
+.roadmap-time-text-color{
+  color: var(--light-font-transparent-text-color) !important;
 }
 
 @media screen and (max-width: 1466px) {
